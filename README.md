@@ -10,7 +10,6 @@ It uses the `qrcode` and `opencv-python` libraries.
 ### Requirements
 
 - Python > 3.9
-- Docker
 
 ### Environment setup
 
