@@ -7,11 +7,34 @@ It uses the `qrcode` and `opencv-python` libraries.
 
 ## Installation
 
-To install the required libraries, run the following command:
+### Requirements
 
-```bash
-pip install qrcode opencv-python
-```
+- Python > 3.9
+- Docker
+
+### Environment setup
+
+1. Create and activate a virtual environment:
+
+   **Linux/macOS:**
+
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+   **Windows:**
+
+    ```bash
+   python -m venv .venv
+   .venv\Scripts\activate
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
