@@ -40,6 +40,7 @@ It uses the `qrcode` and `opencv-python` libraries.
 Run the script with the following command:
 
 ```bash
+cd bin
 python qrcode_admin.py
 ```
 In the main menu, you can choose between generating a QR code or reading one.
