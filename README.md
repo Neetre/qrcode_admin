@@ -43,6 +43,7 @@ This project contains multiple scripts that allow you to generate and read QR co
 To run the qr code admin script, run the following command:
 
 ```bash
+cd bin
 python qrcode_admin.py
 ```
 In the main menu, you can choose between generating a QR code or reading one.
