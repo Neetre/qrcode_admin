@@ -1,5 +1,8 @@
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, Form, Request
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from starlette.middleware.cors import CORSMiddleware
 import uvicorn
 import argparse
@@ -32,14 +35,34 @@ def generate_qr_code():
 
 # API section
 app = FastAPI()
-app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*']
 )
 
+@app.get("/qr_code", response_class=HTMLResponse)
+async def get_qr_code_page(request: Request):
+    return templates.TemplateResponse("qr_code_form.html", {"request": request})
 
-@app.get("/qr_code/{data}")
+@app.post("/qr_code")
+async def post_qr_code_page(code: str = Form(...), password: str = Form(...)):
+    if password != PASSWORD:
+        return {"status": "invalid password"}
+
+    code = datamanager.get_single_code(code)
+    if code is None:
+        return {"status": "not found"}
+
+    if code[2] == 0:
+        datamanager.cursor.execute('''UPDATE codes SET used = 1 WHERE data = ?''', (code[1],))
+        datamanager.conn.commit()
+        return {"status": "valid"}
+    else:
+        return {"status": "invalid"}
+
+@app.get("/qr_code")
 async def validate_qr_code(data: str):
     code = datamanager.get_single_code(data)
     if code is None:
@@ -52,14 +75,14 @@ async def validate_qr_code(data: str):
     else:
         return {"status": "invalid"}
 
-@app.get("/admin_login/{data}")
+@app.get("/admin_login")
 async def admin_login(data: str):
     if data == PASSWORD:
         return {"status": "ok"}
     else:
         return {"status": "invalid"}
 
-@app.get("/generate_qr_codes/{password}")
+@app.get("/generate_qr_codes")
 async def generate_qr_codes(password: str):
     if password != PASSWORD:
         return {"status": "invalid password"}
@@ -76,5 +99,5 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
-    DEFAUTL_LINK = f"http://{args.ip_address}:{args.port}/qr_code/"
+    DEFAUTL_LINK = f"http://{args.ip_address}:{args.port}/qr_code?code="
     uvicorn.run(app, host=args.ip_address, port=args.port)

@@ -56,8 +56,11 @@ Example of a generated QR code:
 To run the qr code validation script, run the following command:
 
 ```bash
-python qrcode_val.py
+python qrcode_val.py -ip <ip> -p <port>
 ```
+
+- ip: the ip address of the server
+- port: the port of the server
 
 ## License
 

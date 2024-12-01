@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Admin Login Page</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+        <meta name="description" content="Admin Login Page">
+        <link rel="stylesheet" href="adminpage.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Admin Page</h1>
+            <button onclick="generate_qr">Generate QR codes</button>
+            <div id="qr-codes">
+                <label for="qr-code">Inserisci il codice:</label>
+                <input type="text" id="qr-code" name="qr-code" required>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+        <script>
+            async function generate_qr() {
+                const response = await axios.get('http://localhost:9000/admin/generate_qr');
+                if (response.data.success) {
+                    alert('QR codes generated');
+                } else {
+                    alert('Failed to generate QR codes');
+                }
+            }
+
+            async function submit(event) {
+                event.preventDefault();
+                const qr_code = document.getElementById('qr-code').value;
+                const response = await axios.post('http://localhost:9000/admin/qr_code', {
+                    qr_code,
+                    accountUser
+                });
+                if (response.data.success) {
+                    alert(response.data.message);
+                } else {
+                    alert(response.data.message);
+                }
+            }
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const accountUser = urlParams.get('username');
+        </script>
+    </body>
+</html>

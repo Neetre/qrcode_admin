@@ -11,3 +11,105 @@
 2024-12-01 16:00:02,999 - asyncio - DEBUG - Using proactor: IocpProactor
 2024-12-01 16:04:28,365 - asyncio - DEBUG - Using proactor: IocpProactor
 2024-12-01 16:04:34,836 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:24:00,965 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:26:36,323 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:36:19,247 - fastapi - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2024-12-01 18:36:29,677 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:38:16,448 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:38:16,448 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:8]
+2024-12-01 18:38:16,448 - python_multipart.multipart - DEBUG - Calling on_field_data with data[9:14]
+2024-12-01 18:38:16,448 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:38:16,448 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:41:34,888 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:42:14,064 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:42:14,064 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:4]
+2024-12-01 18:42:14,064 - python_multipart.multipart - DEBUG - Calling on_field_data with data[5:34]
+2024-12-01 18:42:14,064 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:42:14,065 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:42:14,065 - python_multipart.multipart - DEBUG - Calling on_field_name with data[35:43]
+2024-12-01 18:42:14,065 - python_multipart.multipart - DEBUG - Calling on_field_data with data[44:49]
+2024-12-01 18:42:14,065 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:42:14,065 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:42:42,024 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:42:42,024 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:4]
+2024-12-01 18:42:42,024 - python_multipart.multipart - DEBUG - Calling on_field_data with data[5:34]
+2024-12-01 18:42:42,024 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:42:42,024 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:42:42,024 - python_multipart.multipart - DEBUG - Calling on_field_name with data[35:43]
+2024-12-01 18:42:42,024 - python_multipart.multipart - DEBUG - Calling on_field_data with data[44:49]
+2024-12-01 18:42:42,024 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:42:42,024 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:42:48,958 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:42:51,473 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:42:51,473 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:4]
+2024-12-01 18:42:51,473 - python_multipart.multipart - DEBUG - Calling on_field_data with data[5:34]
+2024-12-01 18:42:51,473 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:42:51,474 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:42:51,474 - python_multipart.multipart - DEBUG - Calling on_field_name with data[35:43]
+2024-12-01 18:42:51,474 - python_multipart.multipart - DEBUG - Calling on_field_data with data[44:49]
+2024-12-01 18:42:51,474 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:42:51,474 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:43:03,397 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:43:04,787 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:43:04,788 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:4]
+2024-12-01 18:43:04,788 - python_multipart.multipart - DEBUG - Calling on_field_data with data[5:34]
+2024-12-01 18:43:04,788 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:43:04,788 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:43:04,788 - python_multipart.multipart - DEBUG - Calling on_field_name with data[35:43]
+2024-12-01 18:43:04,788 - python_multipart.multipart - DEBUG - Calling on_field_data with data[44:49]
+2024-12-01 18:43:04,788 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:43:04,788 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:45:44,157 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:45:44,157 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:4]
+2024-12-01 18:45:44,157 - python_multipart.multipart - DEBUG - Calling on_field_data with data[5:69]
+2024-12-01 18:45:44,157 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:45:44,157 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:45:44,157 - python_multipart.multipart - DEBUG - Calling on_field_name with data[70:78]
+2024-12-01 18:45:44,157 - python_multipart.multipart - DEBUG - Calling on_field_data with data[79:84]
+2024-12-01 18:45:44,157 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:45:44,157 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:46:23,757 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:46:29,068 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:46:29,068 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:4]
+2024-12-01 18:46:29,068 - python_multipart.multipart - DEBUG - Calling on_field_data with data[5:69]
+2024-12-01 18:46:29,068 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:46:29,068 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:46:29,068 - python_multipart.multipart - DEBUG - Calling on_field_name with data[70:78]
+2024-12-01 18:46:29,068 - python_multipart.multipart - DEBUG - Calling on_field_data with data[79:84]
+2024-12-01 18:46:29,068 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:46:29,068 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:47:04,888 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:47:06,103 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:47:06,103 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:4]
+2024-12-01 18:47:06,103 - python_multipart.multipart - DEBUG - Calling on_field_data with data[5:69]
+2024-12-01 18:47:06,103 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:47:06,103 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:47:06,103 - python_multipart.multipart - DEBUG - Calling on_field_name with data[70:78]
+2024-12-01 18:47:06,103 - python_multipart.multipart - DEBUG - Calling on_field_data with data[79:84]
+2024-12-01 18:47:06,103 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:47:06,103 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:47:15,669 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:47:18,489 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:47:18,489 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:4]
+2024-12-01 18:47:18,489 - python_multipart.multipart - DEBUG - Calling on_field_data with data[5:69]
+2024-12-01 18:47:18,489 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:47:18,489 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:47:18,489 - python_multipart.multipart - DEBUG - Calling on_field_name with data[70:78]
+2024-12-01 18:47:18,489 - python_multipart.multipart - DEBUG - Calling on_field_data with data[79:84]
+2024-12-01 18:47:18,489 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:47:18,489 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:47:27,504 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:47:27,504 - python_multipart.multipart - DEBUG - Calling on_field_name with data[0:4]
+2024-12-01 18:47:27,504 - python_multipart.multipart - DEBUG - Calling on_field_data with data[5:69]
+2024-12-01 18:47:27,504 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:47:27,504 - python_multipart.multipart - DEBUG - Calling on_field_start with no data
+2024-12-01 18:47:27,504 - python_multipart.multipart - DEBUG - Calling on_field_name with data[70:78]
+2024-12-01 18:47:27,504 - python_multipart.multipart - DEBUG - Calling on_field_data with data[79:84]
+2024-12-01 18:47:27,504 - python_multipart.multipart - DEBUG - Calling on_field_end with no data
+2024-12-01 18:47:27,504 - python_multipart.multipart - DEBUG - Calling on_end with no data
+2024-12-01 18:51:19,597 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 18:52:10,093 - asyncio - DEBUG - Using proactor: IocpProactor

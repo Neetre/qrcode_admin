@@ -29,7 +29,7 @@
                     password
                 });
                 if (response.data.success) {
-                    
+                    window.location.href = `admin_page.html?username=${username}`;
                 } else {
                     alert('Login failed');
                 }
