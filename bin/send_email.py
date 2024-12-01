@@ -75,10 +75,12 @@ def email_sender():
     data = concatenate_data(files, emails)
     print(data[0])
 
-    for file, email in data:
-        send_email(email, 'Qr Code per Cori', 'Ecco il tuo qrcode. Ricorda, è soltanto tuo. Se lo userai con un altro cellulare esso verrà segnato come usato', file)
-        print(f"Email sent to {email} with file {file}")
-        break
+    try:
+        for file, email in data:
+            send_email(email, 'Qr Code per Cori', 'Ecco il tuo qrcode. Ricorda, è soltanto tuo. Se lo userai con un altro cellulare esso verrà segnato come usato', file)
+            print(f"Email sent to {email} with file {file}")
+    except Exception as e:
+        print(f"Exception cought while sending email: {e}")
     print("All emails sent")
 
 
