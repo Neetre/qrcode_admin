@@ -93,11 +93,12 @@ async def generate_qr_codes(password: str):
 def parse_args():
     parser = argparse.ArgumentParser(description='Gestore di codici QR')
     parser.add_argument('-ip', '--ip_address', type=str, help='Indirizzo IP del server')
+    parser.add_argument('-d', '--domain', type=str, help='Dominio del server')
     parser.add_argument('-p', '--port', type=int, help='Porta del server')
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     args = parse_args()
-    DEFAUTL_LINK = f"http://{args.ip_address}:{args.port}/qr_code?code="
+    DEFAUTL_LINK = f"http://{args.ip_address if not args.domain else args.domain}:{args.port}/qr_code?code="
     uvicorn.run(app, host=args.ip_address, port=args.port)
