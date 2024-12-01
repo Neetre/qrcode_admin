@@ -51,7 +51,13 @@ async def validate_qr_code(data: str):
         return {"status": "valid"}
     else:
         return {"status": "invalid"}
-    
+
+@app.get("/admin_login/{data}")
+async def admin_login(data: str):
+    if data == PASSWORD:
+        return {"status": "ok"}
+    else:
+        return {"status": "invalid"}
 
 @app.get("/generate_qr_codes/{password}")
 async def generate_qr_codes(password: str):
@@ -59,7 +65,7 @@ async def generate_qr_codes(password: str):
         return {"status": "invalid password"}
     generate_qr_code()
     return {"status": "ok"}
-    
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Gestore di codici QR')
