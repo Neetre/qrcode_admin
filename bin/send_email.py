@@ -8,7 +8,7 @@ import os
 
 
 EMAIL = os.environ.get('EMAIL')
-PASSWORD = os.environ.get('PASSWORD_EMAIL')
+PASSWORD_EMAIL = os.environ.get('PASSWORD_EMAIL')
 SMTP_PORT = 465
 
 
@@ -48,7 +48,7 @@ def send_email(to_email, subject, body, filepath: str = None):
     context = ssl.create_default_context()
     SMTP_SERVER = smtp_server(EMAIL)
     with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT, context=context) as server:
-        server.login(EMAIL, PASSWORD)
+        server.login(EMAIL, PASSWORD_EMAIL)
         server.sendmail(EMAIL, to_email, msg.as_string())
 
 
