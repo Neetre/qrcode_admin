@@ -73,6 +73,7 @@ def email_sender():
     files = get_files('../data/qr_codes/')
     emails = get_emails("../data/emails.txt")
     data = concatenate_data(files, emails)
+    print(data[0])
 
     for file, email in data:
         send_email(email, 'Qr Code per Cori', 'Ecco il tuo qrcode. Ricorda, è soltanto tuo. Se lo userai con un altro cellulare esso verrà segnato come usato', file)

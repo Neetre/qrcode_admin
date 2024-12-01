@@ -92,8 +92,6 @@ async def generate_qr_codes(password: str):
 
 @app.get("/send_email")
 async def send_email(password: str):
-    print(password)
-    print(PASSWORD)
     if password != PASSWORD:
         return {"status": "invalid password"}
     email_sender()
