@@ -1,0 +1,13 @@
+2024-12-01 15:40:02,256 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 15:41:10,314 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 15:42:00,202 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 15:43:17,865 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 15:43:37,062 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 15:53:22,930 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 15:54:04,051 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 15:54:34,041 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 15:55:27,604 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 15:56:45,433 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 16:00:02,999 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 16:04:28,365 - asyncio - DEBUG - Using proactor: IocpProactor
+2024-12-01 16:04:34,836 - asyncio - DEBUG - Using proactor: IocpProactor

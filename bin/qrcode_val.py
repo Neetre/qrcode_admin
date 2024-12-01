@@ -1,6 +1,11 @@
+import os
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 import uvicorn
+import argparse
+from dotenv import load_dotenv
+load_dotenv()
+PASSWORD = os.getenv("PASSWORD")
 
 from data_manager import DataManager
 from qrcode_admin import QRCodeTool
@@ -8,27 +13,24 @@ from qrcode_admin import QRCodeTool
 datamanager = DataManager("../data/qr_codes.db")
 qr_tool = QRCodeTool()
 
-# QR code automation
-DEFAUTL_LINK = "http://0.0.0.0:9000/qr_code/{data}"
 
-def create_link(data):
-    return DEFAUTL_LINK.format(data)
+# QR code automation
+def create_link(code):
+    return DEFAUTL_LINK + code
 
 
 def generate_qr_code():
-    with open("file", "r") as file:
-        data = file.readlines()
-
+    data = datamanager.get_codes()
+    c = 1
     for i in data:
-        link = create_link(i)
-        qr_tool.generate_qr(link)
-        # data = link.split("/")[-1]
-        datamanager.insert_code(data)
+        filename = f"qr_code_{c}.png"
+        link = create_link(i[1])
+        qr_tool.generate_qr(link, filename)
+        c += 1
     return
 
 
 # API section
-
 app = FastAPI()
 app = FastAPI()
 app.add_middleware(
@@ -40,6 +42,9 @@ app.add_middleware(
 @app.get("/qr_code/{data}")
 async def validate_qr_code(data: str):
     code = datamanager.get_single_code(data)
+    if code is None:
+        return {"status": "invalid"}
+
     if code[2] == 0:
         datamanager.cursor.execute('''UPDATE codes SET used = 1 WHERE data = ?''', (data,))
         datamanager.conn.commit()
@@ -48,5 +53,22 @@ async def validate_qr_code(data: str):
         return {"status": "invalid"}
     
 
+@app.get("/generate_qr_codes/{password}")
+async def generate_qr_codes(password: str):
+    if password != PASSWORD:
+        return {"status": "invalid password"}
+    generate_qr_code()
+    return {"status": "ok"}
+    
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='Gestore di codici QR')
+    parser.add_argument('-ip', '--ip_address', type=str, help='Indirizzo IP del server')
+    parser.add_argument('-p', '--port', type=int, help='Porta del server')
+    return parser.parse_args()
+
+
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=9000)
+    args = parse_args()
+    DEFAUTL_LINK = f"http://{args.ip_address}:{args.port}/qr_code/"
+    uvicorn.run(app, host=args.ip_address, port=args.port)
