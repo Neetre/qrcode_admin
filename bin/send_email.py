@@ -53,15 +53,16 @@ def send_email(to_email, subject, body, filepath: str = None):
 
 
 def get_files(path):
+    files = []
     for root, dirs, files in os.walk(path):
         for file in files:
-            yield os.path.join(root, file)
+            files.append(os.path.join(root, file))
+    return files
 
 
 def get_emails(path):
     with open(path, 'r') as file:
-        for line in file:
-            yield line.strip()
+        return file.readlines()
 
 
 def concatenate_data(files, emails):
