@@ -8,10 +8,11 @@ import uvicorn
 import argparse
 from dotenv import load_dotenv
 load_dotenv()
-PASSWORD = os.getenv("PASSWORD")
+PASSWORD = os.getenv("PASSWORD_ADMIN")
 
 from data_manager import DataManager
 from qrcode_admin import QRCodeTool
+from send_email import email_sender
 
 datamanager = DataManager("../data/qr_codes.db")
 qr_tool = QRCodeTool()
@@ -87,6 +88,13 @@ async def generate_qr_codes(password: str):
     if password != PASSWORD:
         return {"status": "invalid password"}
     generate_qr_code()
+    return {"status": "ok"}
+
+@app.get("/send_email")
+async def send_email(password: str):
+    if password != PASSWORD:
+        return {"status": "invalid password"}
+    email_sender()
     return {"status": "ok"}
 
 

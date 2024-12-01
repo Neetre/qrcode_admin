@@ -8,7 +8,7 @@ import os
 
 
 EMAIL = os.environ.get('EMAIL')
-PASSWORD = os.environ.get('PASSWORD')
+PASSWORD = os.environ.get('PASSWORD_EMAIL')
 SMTP_PORT = 465
 
 
@@ -69,7 +69,7 @@ def concatenate_data(files, emails):
     return conc
 
 
-def main():
+def email_sender():
     files = get_files('../data/qr_codes/')
     emails = get_emails("../data/emails.txt")
     data = concatenate_data(files, emails)
@@ -77,8 +77,9 @@ def main():
     for file, email in data:
         send_email(email, 'Qr Code per Cori', 'Ecco il tuo qrcode. Ricorda, è soltanto tuo. Se lo userai con un altro cellulare esso verrà segnato come usato', file)
         print(f"Email sent to {email} with file {file}")
+        break
     print("All emails sent")
 
 
 if __name__ == '__main__':
-    main()
+    email_sender()
