@@ -59,6 +59,8 @@ def get_files(path):
     c = 0
     for root, dirs, files in os.walk(path):
         for file in files:
+            print(file)
+            break
             files.append(os.path.join(root, file))
             print(f"File added {c}")
             c += 1
@@ -86,6 +88,7 @@ def concatenate_data(files, emails):
 def email_sender():
     files = get_files('../data/qr_codes/')
     print("File read...")
+    import sys; sys.exit(0)
     # emails = get_emails("../data/matricola-classe.csv")
     emails = ["19746@studenti.marconiverona.edu.it"]
     print("Emails read ...")
