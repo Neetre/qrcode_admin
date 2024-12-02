@@ -11,6 +11,8 @@ EMAIL = os.environ.get('EMAIL')
 PASSWORD_EMAIL = os.environ.get('PASSWORD_EMAIL')
 SMTP_PORT = 465
 
+DEF_EMAIL = "{}@studenti.marconiverona.edu.it"
+
 
 def smtp_server(email):
     domain = email.split("@")[1]
@@ -61,8 +63,16 @@ def get_files(path):
 
 
 def get_emails(path):
+    emails = []
     with open(path, 'r') as file:
-        return file.readlines()
+        reader = file.readlines()
+        
+        for row in reader[1:]:
+            matricola, classe = row.split(";")
+            if classe in ["1DI", "2EI"] or classe.startswith("5"):
+                emails.append(matricola)
+                
+    return emails
 
 
 def concatenate_data(files, emails):
@@ -72,7 +82,7 @@ def concatenate_data(files, emails):
 
 def email_sender():
     files = get_files('../data/qr_codes/')
-    emails = get_emails("../data/emails.txt")
+    emails = get_emails("../data/matricola-classe.csv")
     data = concatenate_data(files, emails)
     print(data[0])
 
