@@ -90,7 +90,7 @@ def email_sender():
     
     # import sys; sys.exit(0)
     # emails = get_emails("../data/matricola-classe.csv")
-    emails = ["19746@studenti.marconiverona.edu.it"]
+    emails = ["19746@studenti.marconiverona.edu.it", "20466@studenti.marconiverona.edu.it"]
     print("Emails read ...")
     data = concatenate_data(files, emails)
     print("Data Created...")
