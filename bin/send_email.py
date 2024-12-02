@@ -74,7 +74,7 @@ def get_emails(path):
         for row in reader[1:]:
             matricola, classe = row.split(";")
             if classe in ["1DI", "2EI"] or classe.startswith("5"):
-                matricola = DEF_EMAIL.format(matricola
+                matricola = DEF_EMAIL.format(matricola)
                 emails.append(matricola)
                 
     return emails
