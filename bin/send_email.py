@@ -55,15 +55,12 @@ def send_email(to_email, subject, body, filepath: str = None):
 
 
 def get_files(path):
-    files = []
-    c = 0
+    qr_codes_paths = []
     for root, dirs, files in os.walk(path):
         for file in files:
-            print(file)
-            files.append(os.path.join(root, file))
+            qr_codes_paths.append(os.path.join(path, file))
             print(f"File added {c}")
-            c += 1
-    return files
+    return qr_codes_paths
 
 
 def get_emails(path):
