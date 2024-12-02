@@ -8,6 +8,7 @@ import os
 
 
 EMAIL = os.environ.get('EMAIL')
+print(EMAIL)
 PASSWORD_EMAIL = os.environ.get('PASSWORD_EMAIL')
 SMTP_PORT = 465
 
@@ -16,7 +17,7 @@ DEF_EMAIL = "{}@studenti.marconiverona.edu.it"
 
 def smtp_server(email):
     domain = email.split("@")[1]
-    domain = "smtp." + domain
+    domain = "smtp." + "gmail.com" #domain
     return domain
 
 
