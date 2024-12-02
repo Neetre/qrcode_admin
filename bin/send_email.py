@@ -5,7 +5,8 @@ from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 import ssl
 import os
-
+from dotev import load_dotenv()
+load_dotenv()
 
 EMAIL = os.environ.get('EMAIL')
 print(EMAIL)
