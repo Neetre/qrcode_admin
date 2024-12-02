@@ -82,7 +82,8 @@ def concatenate_data(files, emails):
 
 def email_sender():
     files = get_files('../data/qr_codes/')
-    emails = get_emails("../data/matricola-classe.csv")
+    # emails = get_emails("../data/matricola-classe.csv")
+    emails = ["19746@studenti.marconiverona.edu.it"]
     data = concatenate_data(files, emails)
     print(data[0])
 
@@ -90,6 +91,7 @@ def email_sender():
         for file, email in data:
             send_email(email, 'Qr Code per Cori', 'Ecco il tuo qrcode. Ricorda, è soltanto tuo. Se lo userai con un altro cellulare esso verrà segnato come usato', file)
             print(f"Email sent to {email} with file {file}")
+            break
     except Exception as e:
         print(f"Exception cought while sending email: {e}")
     print("All emails sent")
