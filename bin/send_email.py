@@ -80,7 +80,7 @@ def get_emails(path):
 
 
 def concatenate_data(files, emails):
-    conc = [(file, email) for file in files for email in emails]
+    conc = [(file, email) for file, email in zip(files, emails)]
     return conc
 
 
