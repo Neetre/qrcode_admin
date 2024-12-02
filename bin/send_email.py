@@ -60,7 +60,6 @@ def get_files(path):
     for root, dirs, files in os.walk(path):
         for file in files:
             print(file)
-            break
             files.append(os.path.join(root, file))
             print(f"File added {c}")
             c += 1
