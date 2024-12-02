@@ -85,9 +85,8 @@ def concatenate_data(files, emails):
 def email_sender():
     files = get_files('../data/qr_codes/')
     print("File read...")
-    print(files[0])
     
-    import sys; sys.exit(0)
+    # import sys; sys.exit(0)
     # emails = get_emails("../data/matricola-classe.csv")
     emails = ["19746@studenti.marconiverona.edu.it"]
     print("Emails read ...")
