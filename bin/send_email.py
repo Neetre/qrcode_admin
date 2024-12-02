@@ -96,6 +96,7 @@ def email_sender():
 
     try:
         for file, email in data:
+            print(file, email)
             send_email(email, 'Qr Code per Cori', 'Ecco il tuo qrcode. Ricorda, è soltanto tuo. Se lo userai con un altro cellulare esso verrà segnato come usato', file)
             print(f"Email sent to {email} with file {file}")
             break
