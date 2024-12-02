@@ -59,7 +59,6 @@ def get_files(path):
     for root, dirs, files in os.walk(path):
         for file in files:
             qr_codes_paths.append(os.path.join(path, file))
-            print(f"File added {c}")
     return qr_codes_paths
 
 
