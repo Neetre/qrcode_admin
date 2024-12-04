@@ -94,4 +94,4 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
     DEFAUTL_LINK = f"http://{args.ip_address if not args.domain else args.domain}:{args.port}/qr_code?code="
-    uvicorn.run(app, host=args.ip_address, port=args.port)
+    uvicorn.run(app, host="127.0.0.1", port="5000")
