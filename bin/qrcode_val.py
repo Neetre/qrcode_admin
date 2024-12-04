@@ -36,10 +36,12 @@ def generate_qr_code():
 
 # API section
 app = FastAPI()
+'''
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*']
 )
+'''
 
 
 @app.get("/qr_code", response_class=HTMLResponse)
