@@ -43,6 +43,7 @@ app.add_middleware(
     allow_origins=['*']
 )
 
+"""
 @app.get("/qr_code", response_class=HTMLResponse)
 async def get_qr_code_page(request: Request):
     return templates.TemplateResponse("qr_code_form.html", {"request": request})
@@ -62,6 +63,7 @@ async def post_qr_code_page(code: str = Form(...), password: str = Form(...)):
         return {"status": "valid"}
     else:
         return {"status": "invalid"}
+"""
 
 @app.get("/qr_code")
 async def validate_qr_code(data: str):
