@@ -86,8 +86,8 @@ async def send_email(password: str):
 def parse_args():
     parser = argparse.ArgumentParser(description='Gestore di codici QR')
     parser.add_argument('-ip', '--ip_address', type=str, help='Indirizzo IP del server')
-    parser.add_argument('-d', '--domain', type=str, help='Dominio del server')
-    parser.add_argument('-p', '--port', type=int, help='Porta del server')
+    parser.add_argument('-d', '--domain', type=str, default="0.0.0.0", help='Dominio del server')
+    parser.add_argument('-p', '--port', type=int, default="8000", help='Porta del server')
     return parser.parse_args()
 
 
