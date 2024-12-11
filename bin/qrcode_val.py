@@ -1,6 +1,6 @@
 import os
 from fastapi import FastAPI, Form, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.middleware.cors import CORSMiddleware
@@ -44,9 +44,9 @@ app.add_middleware(
 '''
 
 
-@app.get("/qr_code", response_class=HTMLResponse)
+@app.get("/qr_code", response_class=JSONResponse)
 async def validate_qr_code(request: Request):
-    code = request.query_params.get("code")
+    code = request.query_params.get("code") or request.query_params.get("data")
     qr_code = datamanager.get_single_code(code)
     if qr_code is None:
         return {"status": "invalid"}
