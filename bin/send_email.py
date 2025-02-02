@@ -13,7 +13,7 @@ print(EMAIL)
 PASSWORD_EMAIL = os.environ.get('PASSWORD_EMAIL')
 SMTP_PORT = 465
 
-DEF_EMAIL = "{}@studenti.marconiverona.edu.it"
+DEF_EMAIL = ""
 
 
 def smtp_server(email):
@@ -83,31 +83,3 @@ def get_emails(path):
 def concatenate_data(files, emails):
     conc = [(file, email) for file, email in zip(files, emails)]
     return conc
-
-
-def email_sender():
-    files = get_files('../data/qr_codes/')
-    print("File read...")
-    
-    # import sys; sys.exit(0)
-    emails = get_emails("../data/matricola-classe.csv")
-    # emails = ["19746@studenti.marconiverona.edu.it", "20466@studenti.marconiverona.edu.it"]
-    print("Emails read ...")
-    # print(emails)
-    # import sys; sys.exit(0)
-    data = concatenate_data(files, emails)
-    print("Data Created...")
-    print(data[0])
-
-    try:
-        for file, email in data:
-            print(file, email)
-            send_email(email, 'Qr Code per Cori', 'Ecco il tuo qrcode. Ricorda, è soltanto tuo. Se lo userai con un altro cellulare esso verrà segnato come usato', file)
-            print(f"Email sent to {email} with file {file}")
-    except Exception as e:
-        print(f"Exception cought while sending email: {e}")
-    print("All emails sent")
-
-
-if __name__ == '__main__':
-    email_sender()
